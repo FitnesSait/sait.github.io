@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="bebra2.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css">
+    <script src="FlickityPACKAGED.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</head>
+
+<body>
+      <div class="carousel">
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+      </div>
+
+      <div class="foryou">
+        <h1>Подборка для вас</h1>
+      </div>
+
+      <div class="trenka">
+        <div class="trone"><div class="rek_txt">Тренировка #111</div><div class="subo">HIIT и прочее</div></div>
+        <div class="trtwo"><div class="rek_txt">Тренировка #222</div><div class="subo">Йога и прочее</div></div>
+      </div>
+
+      <div class="trenkatwo">
+        <div class="trthree"><div class="rek_txt">Тренировка #333</div><div class="subo">Гребля и прочее</div></div>
+        <div class="trfour"><div class="rek_txt">Тренировка #444</div><div class="subo">Танцы и прочее</div></div>
+      </div>
+
+      <div class="trenkathree">
+        <div class="trfive"><div class="rek_txt">Тренировка #555</div><div class="subo">Пилатес и прочее</div></div>
+        <div class="trsix"><div class="rek_txt">Тренировка #666</div><div class="subo">Кор и прочее</div></div>
+      </div>
+
+      <section class="grusha">
+        <div class="slider_report">
+          <section class="variable slider">
+            <div>
+              <div class="item1 slider_card">
+    
+                <div class="body_card">
+                  <div class="slider_text">
+                    <h2>Name</h2>
+                    <p class="top8">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat, viverra magna risus aliquam massa.
+                      Ac aliquam ac volutpat, viverra magna risus.
+                    </p>
+                  </div>
+                </div>
+    
+              </div>
+            </div>
+            <div>
+              <div class="item2 slider_card">
+    
+                <div class="body_card">
+                  <div class="slider_text">
+                    <h2>Name</h2>
+                    <p class="top8">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat, viverra magna risus aliquam massa.
+                      Ac aliquam ac volutpat, viverra magna risus.
+                    </p>
+                  </div>
+                </div>
+    
+              </div>
+            </div>
+            <div>
+              <div class="item3 slider_card">
+    
+                <div class="body_card">
+                  <div class="slider_text">
+                    <h2>Name</h2>
+                    <p class="top8">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat, viverra magna risus aliquam massa.
+                      Ac aliquam ac volutpat, viverra magna risus.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="item4 slider_card">
+    
+                <div class="body_card">
+                  <div class="slider_text">
+                    <h2>Name</h2>
+                    <p class="top8">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac volutpat, viverra magna risus aliquam massa.
+                      Ac aliquam ac volutpat, viverra magna risus.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="container arrow">
+          <div class="row">
+          </div>
+        </div>
+      </section>
+
+      
+      
+
+      
+<script>
+function initEmptySlide() {
+  const margin = $(".container")[0].getClientRects()[0].x;
+  $(".item1").css("margin-left", Math.floor(margin) - 15);
+}
+
+$(window).resize(function () {
+  initEmptySlide();
+});
+
+$(document).on("ready", function () {
+  initEmptySlide();
+
+  $(".variable").slick({
+    dots: false,
+    focusOnSelect: false,
+    infinite: false,
+    variableWidth: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    centerPadding: "40px",
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: false,
+          infinite: true
+        }
+      }
+    ]
+  });
+});
+</script>
+<script>
+var flkty = new Flickity('.carousel');
+
+var buttonGroup = document.querySelector('.button-group');
+var buttons = buttonGroup.querySelectorAll('.button');
+buttons = fizzyUIUtils.makeArray( buttons );
+
+buttonGroup.addEventListener( 'click', function( event ) {
+  // filter for button clicks
+  if ( !matchesSelector( event.target, '.button' ) ) {
+    return;
+  }
+  var index = buttons.indexOf( event.target );
+  flkty.select( index );
+});
+</script>
+</body>
+</html>
